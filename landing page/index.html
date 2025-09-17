@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SnapCart</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+</head>
+<body class="landing-page">
+
+<div class="logo-container">
+    <img src="logo1.png" alt="SnapCart Logo" class="logo">
+    <p class="tagline">Your AI Photo Companion</p>
+</div>
+
+<script>
+window.addEventListener('load', () => {
+    const logoContainer = document.querySelector('.logo-container');
+
+    // Show logo for 2s
+    setTimeout(() => {
+        // Fade out logo
+        logoContainer.style.transition = 'opacity 1s';
+        logoContainer.style.opacity = 0;
+
+        // Redirect to home after fade
+        setTimeout(() => {
+            window.location.href = 'home.html';
+        }, 1000);
+    }, 2000);
+});
+</script>
+</body>
+</html>
