@@ -10,27 +10,35 @@
 </head>
 <body class="landing-page">
 
+<!-- Landing Page -->
 <div class="logo-container">
-    <img src="logo1.png" alt="SnapCart Logo" class="logo">
-    <p class="tagline">Your AI Photo Companion</p>
+  <video id="logoVideo" autoplay muted playsinline>
+    <source src="WhatsApp Video 2025-09-17 at 8.03.08 PM.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
 </div>
+
 
 <script>
 window.addEventListener('load', () => {
     const logoContainer = document.querySelector('.logo-container');
 
-    // Show logo for 2s
-    setTimeout(() => {
-        // Fade out logo
-        logoContainer.style.transition = 'opacity 1s';
-        logoContainer.style.opacity = 0;
+    const logoVideo = document.getElementById("logoVideo");
 
-        // Redirect to home after fade
+// When video ends, go to home.html
+logoVideo.addEventListener("ended", () => {
+  window.location.href = "home.html";
+
+  // Redirect to home after fade
         setTimeout(() => {
             window.location.href = 'home.html';
         }, 1000);
     }, 2000);
 });
+
+
+        
+
 </script>
 </body>
 </html>

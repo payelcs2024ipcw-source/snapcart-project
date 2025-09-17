@@ -13,26 +13,23 @@ body.landing-page {
     text-align: center;
 }
 
-.logo-container img {
-    max-width: 50%;
-    max-height: 50%;
-    animation: fadeIn 1.5s ease-in-out;
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1b0035, #4b0082);
 }
 
-.logo-container .tagline {
-    margin-top: 20px;
-    font-size: 4rem;
-    font-weight: bold;
-    color: #e0b3ff; /* bright purplish text */
-    text-shadow: 2px 2px 15px rgba(0,0,0,0.7);
-    animation: fadeIn 2s ease-in-out;
-    font-family: 'Arial', sans-serif;
+#logoVideo {
+  max-width: 400px;      /* Adjust size as needed */
+  width: 80%;
+  height: auto;
+  border-radius: 12px;   /* Optional rounded edges */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
 
 /* ===== Home Page ===== */
 body.home-page {
