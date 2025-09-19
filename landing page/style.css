@@ -78,19 +78,19 @@ body.home-page {
 
 @keyframes background-slideshow {
     0% {
-        background-image: url('images/bg1.png');
+        background-image: url('../app/images/bg1.png');
     }
     25% {
-        background-image: url('images/bg2.png');
+        background-image: url('../app/images/bg2.png');
     }
     50% {
-        background-image: url('images/bg3.png');
+        background-image: url('../app/images/bg3.png');
     }
     75% {
-        background-image: url('images/bg4.png');
+        background-image: url('../app/images/bg4.png');
     }
     100% {
-        background-image: url('images/bg1.png');
+        background-image: url('../app/images/bg1.png');
     }
 }
 

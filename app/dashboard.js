@@ -2,17 +2,16 @@
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     const userName = localStorage.getItem('loggedInUser');
-//     const logoutBtn = document.getElementById('logout-btn');
 
+//     // If there is no stored user, redirect them to the home page
 //     if (!userName) {
-//         window.location.href = 'home.html';
-//     } else {
-//         // Event listener for logout button
-//         logoutBtn.addEventListener('click', () => {
-//             localStorage.removeItem('loggedInUser'); // Remove the user status
-//             window.location.href = 'home.html'; // Redirect to the home page
-//         });
-//     }
+//         window.location.href = '../landing page/index.html';
+//     } 
+//     // If a user is found, the script does nothing, and the dashboard is displayed.
+//     // The code below would be used to personalize the page if needed:
+//     // else {
+//     //     console.log('Welcome back, ' + userName);
+//     // }
 // });
 
 /// File Upload
