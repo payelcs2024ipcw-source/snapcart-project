@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body.classList.add('fade-out');
             
             setTimeout(() => {
-                window.location.href = "home.html";
+                window.location.href = "./app/home.html";
             }, 1000); // Wait for the body fade-out
         }, 1500); // Wait for the logo animation to finish
     });
