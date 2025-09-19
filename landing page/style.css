@@ -1,3 +1,4 @@
+
 /* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -13,23 +14,52 @@ body.landing-page {
     text-align: center;
 }
 
+/* --- Landing Page Logo Styles --- */
 .logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #1b0035, #4b0082);
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 #logoVideo {
-  max-width: 400px;      /* Adjust size as needed */
-  width: 80%;
-  height: auto;
-  border-radius: 12px;   /* Optional rounded edges */
-  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-  animation: fadeIn 2s ease-in-out;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
+/* Initial state of the logo on the landing page */
+#animatedLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the logo initially */
+    width: 200px; /* Adjust for the desired starting size */
+    opacity: 0; /* Initially hidden */
+    /* This is the animation transition that makes the movement smooth */
+    transition: all 1.5s ease-in-out;
+}
+
+/* --- The class that will be added by JavaScript to trigger the animation --- */
+.animate-to-navbar {
+    top: 20px; /* Moves the logo to the top */
+    left: 20px; /* Moves the logo to the left */
+    transform: none; /* Removes the centering transform */
+    width: 60px; /* Shrinks the logo */
+    opacity: 1; /* Makes the logo visible */
+}
+
+/* --- Final Navbar Styles (for home.html) --- */
+/* Your existing navbar styles for the final page */
+.navbar .logo img {
+    height: 60px;
+    width: auto;
+}
 
 /* ===== Home Page ===== */
 body.home-page {
@@ -37,28 +67,37 @@ body.home-page {
     font-family: Arial, sans-serif;
     color: white;
     position: relative;
-    min-height: 100vh;
-    background: url('images/bg1.png') no-repeat center center/cover; /* fallback */
+    min-height: 80vh;
+    /* background: url('images/bg1.png') no-repeat center center/cover; */
     overflow-x: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: background-slideshow 20s infinite ease-in-out;
 }
 
-/* Background Slideshow */
-.slideshow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: opacity 2s ease-in-out;
-  opacity: 0;
+@keyframes background-slideshow {
+    0% {
+        background-image: url('images/bg1.png');
+    }
+    25% {
+        background-image: url('images/bg2.png');
+    }
+    50% {
+        background-image: url('images/bg3.png');
+    }
+    75% {
+        background-image: url('images/bg4.png');
+    }
+    100% {
+        background-image: url('images/bg1.png');
+    }
 }
 
-.slideshow.show {
-  opacity: 1;
+.logo2 img{
+  width: 12rem;
+  height: 6rem;
+  padding: 15px;
 }
 
 /* Navbar */
@@ -66,7 +105,7 @@ body.home-page {
     position: sticky;
     top: 0;
     width: 100%;
-    background: rgba(0,0,0,0.8);
+    background: #4B3621;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,7 +120,7 @@ body.home-page {
 
 .navbar.sticky ul { list-style: none; display: flex; gap: 20px; }
 .navbar.sticky ul li a {
-    color: #fff;
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
@@ -100,6 +139,210 @@ section:nth-of-type(3) { animation-delay: 0.6s; }
 
 @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
+/*
+ * Color Palette Variables
+ * These variables make it easy to change colors later
+ */
+:root {
+    --artisan-brown: #4B3621;
+    --artisan-green: #6BCB77;
+    --artisan-light: #F8F4E3;
+    --text-color: #333;
+}
+
+/* * --- Content Visibility Classes --- */ 
+.hidden {
+    display: none;
+}
+
+/* Fade-in for main content */
+.fade-in {
+  animation: fadeIn 0.8s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- The Modal Overlay --- */
+#signup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* --- The Sign-up Box --- */
+.modal-content {
+    background: var(--artisan-light);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border: 2px solid var(--artisan-brown); /* A subtle border for a framed look */
+    animation: fadeInScale 0.5s ease-out;
+}
+
+@keyframes fadeInScale {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* --- Headings --- */
+#main-content {
+    display: none;
+}
+.modal {
+    display: flex;
+}
+
+/* When the checkbox is checked, this is the magic that happens */
+#signup-toggle:checked ~ #main-content {
+    display: block;
+}
+#signup-toggle:checked ~ #signup-modal {
+    display: none;
+}
+
+.modal-content h2 {
+    font-size: 2.2em;
+    color: var(--artisan-brown);
+    margin-bottom: 25px;
+    font-family: 'Italianno', cursive; /* Use a more elegant font if you have one */
+}
+
+/* --- Form Inputs --- */
+.modal-content input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.modal-content input:focus {
+    outline: none;
+    border-color: var(--artisan-green);
+    box-shadow: 0 0 8px rgba(107, 203, 119, 0.5);
+}
+
+/* --- Buttons --- */
+#signup-artisan-btn, #signup-customer-btn {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#signup-artisan-btn {
+    background-color: var(--artisan-green);
+    color: white;
+}
+
+#signup-customer-btn {
+    background-color: #f1f1f1;
+    color: var(--artisan-brown);
+}
+
+/* Button Hover Effects */
+#signup-artisan-btn:hover, #signup-customer-btn:hover {
+    transform: translateY(-2px); /* A cool lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-out for modal */
+.fade-out {
+  animation: fadeOut 0.8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Fade-out animation */
+.fade-out {
+  animation: fadeOut 0.9s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 0.9s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-text {
+  color: #9b5de5;
+  font-size: 3rem;
+  margin-top: 20px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+  padding: 15px 800px;
+  border: #000;
+  background-color: #F8F4E3;
+  border-radius: 3rem;
+}
+
+/* Terms link styling */
+.modal-content p a {
+    color: var(--artisan-brown);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.modal-content p{
+  color: goldenrod;
+}
+
+.modal-content p a:hover {
+    color: var(--artisan-green);
+}
+
 /* How It Works */
 .how-it-works {
   background: rgba(0, 0, 0, 0.6); /* semi-transparent */
@@ -108,7 +351,9 @@ section:nth-of-type(3) { animation-delay: 0.6s; }
   color: #fff;
   padding: 100px 20px;
   text-align: center;
-  font-family: 'Great Vibes', cursive;
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
   border-radius: 12px;
 }
 
@@ -214,12 +459,12 @@ section:nth-of-type(3) { animation-delay: 0.6s; }
 /* Footer */
 .tagline {
    padding: 30px;
-   background: rgba(0,0,0,0.8); 
-   color: white; 
+   /* background: rgba(0,0,0,0.8);  */
+   color: var(--text-color); 
    border-radius: 10px;
    max-width: 600px; 
    margin: 50px auto; 
-   font-family: 'Great Vibes', pacifico;
+   font-family: 'Italianno', cursive;
    letter-spacing: 2px;
   }
 

@@ -1,56 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SnapCart</title>
-<link rel="icon" type="image/png" href="images/logo.png">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapCart</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="home-page">
 
-<div class="logo2">
-        <img src="images/logo.png" alt="SnapCart" />
-    </div>
-
-    <section id="signup">
-<div id="signup-modal" class="modal">
-    <div class="modal-content">
-        <h2>Sign Up for SnapCart</h2>
-        <form id="signup-form">
-            <input type="text" id="name" placeholder="Name" required>
-            <!-- <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required> -->
-        </form>
-        <button type="button" id="signup-artisan-btn">Sign Up As Artisan</button>
-        <button type="button" id="signup-customer-btn">Sign Up As Customer</button>
-        <p>By signing up, you agree to our <a href="#">Terms</a>.</p>
-    </div>
-</div>
-    </section>
-
- <!-- Splash Logo (hidden at first) -->
-  <div class="logo splash-logo" style="display:none;">
-    <h2 id="welcome-text" class="welcome-text"></h2>
-  </div>
-
-<div id="main-content" class="hidden">
-
-  <header class="navbar sticky">
-    <div class="logo">
-        <img src="images/logo.png" alt="SnapCart" />
-    </div>
-    <nav>
-        <ul>
-            <li><a href="#signup" class="nav-link">Signup</a></li>
-            <li><a href="#upload" class="nav-link">Upload</a></li>
-            <li><a href="#product" class="nav-link">Product</a></li>
-        </ul>
-    </nav>
-</header>
-    <section id="how-it-works" class="how-it-works fade-in">
-        <h1 class="title">HOW IT WORKS? </h1>
+    <header class="navbar sticky">
+        <div class="logo">
+            <img src="images/logo.png" alt="SnapCart" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#how-it-works" class="nav-link">Help</a></li>
+                <li><a href="#upload" class="nav-link">Upload</a></li>
+                <li><a href="#product" class="nav-link">Product</a></li>
+            </ul>
+        </nav>
+    </header>
+<!-- 
+    <div id="main-content"> -->
+        <!-- <section id="how-it-works" class="how-it-works">
+            <h1 class="title">HOW IT WORKS? </h1>
         <div class="steps">
             <div class="step left">
                 <div class="icon-circle" style="background:#FF6B6B;">📸</div>
@@ -65,10 +40,10 @@
                 <p>SnapCart creates your product page automatically</p>
             </div>
         </div>
-    </section>
+            </section> -->
 
-    <section id="upload" class="upload-section">
-        <h2>Upload Your Craft</h2>
+        <section id="upload" class="upload-section">
+            <h2>Upload Your Craft</h2>
         <div class="upload-box" id="uploadBox">
             <p>📂 Drag & Drop your image here<br>or<br><span class="browse-btn">Click to Browse</span></p>
             <input type="file" id="fileInput" hidden accept="image/*">
@@ -78,10 +53,10 @@
             <button id="micBtn">Start Recording</button>
             <p id="recordingStatus"></p>
         </div>
-    </section>
+            </section>
 
-    <section id="product" class="product-section">
-        <h2>Your Product</h2>
+        <section id="product" class="product-section">
+             <h2>Your Product</h2>
         <div class="product-images">
             <div>
                 <h3>Original</h3>
@@ -104,15 +79,14 @@
             </div>
             <div id="qrcode"></div>
         </div>
-    </section>
-</div>
+            </section>
 
-<footer id="tagline" class="tagline fade-in">
-    <h2>From Local Hands to Global Hearts ❤️</h2>
-</footer>
-
-<div class="footer_section">
-    <footer class="footer_content">
+        <footer id="tagline" class="tagline">
+            <h2>From Local Hands to Global Hearts ❤️</h2>
+            </footer>
+        
+        <div class="footer_section">
+            <footer class="footer_content">
         <div class="footer_leftbox">
             <a class="footer_logo">
                 <img src="logo1.png" alt="snapcart">
@@ -160,8 +134,10 @@
     <div class="footer_desc">
         <p>&copy; 2025- Present SnapCart. All rights reserved.</p>
     </div>
-</div>
+            </div>
+    <!-- </div> -->
 
-<script src="home.js"></script>
+<script src="dashboard.js"></script>
+
 </body>
 </html>
