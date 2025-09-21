@@ -1,18 +1,4 @@
-// // dashboard.js
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const userName = localStorage.getItem('loggedInUser');
-
-//     // If there is no stored user, redirect them to the home page
-//     if (!userName) {
-//         window.location.href = '../landing page/index.html';
-//     } 
-//     // If a user is found, the script does nothing, and the dashboard is displayed.
-//     // The code below would be used to personalize the page if needed:
-//     // else {
-//     //     console.log('Welcome back, ' + userName);
-//     // }
-// });
 
 /// File Upload
 const uploadBox = document.getElementById("uploadBox");
